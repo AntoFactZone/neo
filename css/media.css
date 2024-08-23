@@ -1,0 +1,177 @@
+/* X-Large devices (large desktops, less than 1400px) */
+@media only screen and (max-width: 1399.98px) {
+    footer .footer-content .trustpilot-img {
+        display: block !important;
+    }
+    footer .footer-content .trustpilot-img img:first-child {
+        margin-bottom: 10px;
+    }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media only screen and (max-width: 991.98px) {
+    .toolbar .navbar-text{
+        margin: 0 auto
+    }
+    .toolbar .navbar-nav {
+        display: none;
+    }
+    .navbar-dark .navbar-brand {
+        padding: 10px 0;
+    }
+    .navbar-dark .navbar-brand img {
+        width: 60px;
+        height: auto;
+    }
+    .navbar-dark .btn {
+        margin: 1rem 0rem !important;
+        width: 100%;
+    }
+    .offcanvas-body .nav-link {
+        padding: 1rem 0px;
+    }
+    .header .header-content {
+        margin-left: 0 !important;
+    }
+    .header .slide-show {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: .2;
+    }
+    .map .map-container {
+        margin-bottom: 40px;
+    }
+    .map .map-content {
+        text-align: center;
+    }
+    .map .map-content h2, .panel .panel-content h2, .faqs-content h2 {
+        font-size: 34px;
+    }
+    .map .map-content ul {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .panel .panel-content {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .panel .panel-content ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .panel .laptop .laptop__shadow {
+        display: none !important;
+    }
+    .faqs .faqs-content {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-content {
+        margin: 0 0 60px 0 !important;
+        text-align: center;
+    }
+    .footer-content .footer-logo,
+    .footer-content .trustpilot-img {
+        justify-content: center !important;
+    }
+    footer .footer-right {
+        text-align: center;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 991.98px) {
+    .offcanvas-footer {
+        display: none !important;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {
+    
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+    .features .feature-icon {
+        margin: 0 auto !important
+    }
+    .features .feature-box,
+    .features .feature-box h3 {
+        text-align: center;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .products .products-header .d-flex {
+        display: block !important;
+    }
+    .products .products-header .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .products .products-header .me-5 {
+        margin-right: 0 !important;
+        text-align: center;
+    }
+    .map .map-container .map-point:active, .map .map-container .map-point:focus {
+        margin-left: 40px;
+    }
+    footer .py-5:last-child {
+        padding-top: 0 !important;
+    }
+}
+
+
+@media screen and (max-width:800px) {
+    .minecraft-differents table {
+        border: 1px solid transparent;
+        box-shadow: none
+    }
+    .minecraft-differents table thead {
+        display: none
+    }
+    .minecraft-differents table tbody tr {
+        padding: 20px;
+        margin-bottom: 20px !important;
+        display: block
+    }
+    .minecraft-differents table tbody tr td:before {
+        float: left;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700
+    }
+    .minecraft-differents table tbody tr td {
+        display: block;
+        font-size: 14px;
+        padding: 10px 10px !important;
+        text-align: center
+    }
+    .minecraft-differents table tbody tr td .card {
+        padding: 10px 10px
+    }
+    .minecraft-differents table tbody tr td .card .price {
+        margin-bottom: 10px
+    }
+    .minecraft-differents table tbody tr td .card .btn {
+        display: block
+    }
+}
+
+@media (max-width:768px) {
+    .minecraft-differents table tbody tr .specification {
+        display: none
+    }
+    .minecraft-differents table tbody tr td .fw-bolder {
+        display: inline-block !important
+    }
+}
