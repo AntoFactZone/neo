@@ -1,238 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKULL MC</title>
-    <link rel="icon" type="image/png" href="media/favicon.png">
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/play.css">
-    <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sky Blue Node - Maintenance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <style>
+        @font-face {
+            font-family: 'Instrument Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: url(/cf-fonts/v/instrument-sans/5.0.3/latin-ext/wght/normal.woff2);
+            font-display: swap;
+        }
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background-color: #1A1A1A; /* Fondo oscuro */
+            color: #E5E5E5; /* Texto claro */
+        }
+        .text-highlight {
+            color: #4A90E2; /* Azul */
+        }
+        .bg-highlight {
+            background-color: #4A90E2; /* Azul */
+        }
+        .spin-slow {
+            animation: spin 8s linear infinite;
+        }
+    </style>
 </head>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <nav class="desktop_navbar">
-      <a href="#"><img class="desktop_navbar_logo_img" src="media/mainlogo.png" alt="logo"></a>
-	  <a href="https://wiki.example.com/" class="desktop_navbar_link">Home</a>
-	  <a href="https://wiki.example.com/" class="desktop_navbar_link">Shop</a>
-	  <a href="https://wiki.example.com/" class="desktop_navbar_link">Discord</a>
-	  <a href="https://wiki.example.com/" class="desktop_navbar_link">Vote</a>
-	  <a href="https://wiki.example.com/" class="desktop_navbar_link">Rules</a>
-      <a href="https://wiki.example.com/" class="desktop_navbar_link">Wiki</a>
-      <a href="#discord" class="desktop_navbar_link scroll">Community</a>
-      <a href="#about" class="desktop_navbar_link scroll">Our Team</a>
-      <div class="desktop_navbar_link2_div">
-          <a href="#join" class="desktop_navbar_link2 scroll">Join Us!</a>
-      </div>
-    </nav>
-    <div class="mobile_navbar">
-      <a href="#" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="media/logo_small.png" alt="logo"></a>
-		  
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#join">Join Us</a>
-        </div>
-        <div class="icon" onclick="mobile_navbar_link_hider()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <script>
-            function mobile_navbar_link_hider() {
-            var x = document.getElementById("mobile_navbar_links");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
-            } 
-        </script>
-    </div>
-    <div class="mainflex">
-      <div class="main1">
-        <a class="main1_logo_a" href="#">
-          <img class="main1_logo" src="media/biglogo.png" alt="logo">
-        </a>
-        <div class="main1_description">
-          <a>Minecraft,<br>like</a>
-          <a class="main1_actcent">already done before</a><a>.</a>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
+    <main class="max-w-2xl mx-auto text-center">
 
+        <!-- Icono de Mantenimiento -->
+        <div class="mb-8">
+            <svg class="w-24 h-24 mx-auto text-highlight spin-slow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
         </div>
-		<div class="playercount">
-			<!-- Replace play.cubecraft.net with your server IP address -->
-			<!-- Do it on both line 66 and line 67 -->
-			<!-- Please set both your IP and port -->
-			<p>Join <span class="sip" data-ip="sg-1.skybluenode.cloud" data-port="25565">
-			</span> other players on <span class="ip">mc.skullmc.us.kg</span></p> 
-		</div>
-	</div>
 
-        <a href="#more" class="scroll">
-          <img alt="downarrow" class="main1_downarrow" src="media/downarrow.png">
-        </a>
-        <script>
-          const scrollLinks = document.querySelectorAll('.scroll');
-          scrollLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-              event.preventDefault();
-              const target = document.querySelector(link.getAttribute('href'));
-              const offsetTop = target.offsetTop;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            });
-          });
-        </script>
-      </div>
-      <div id="more"></div>
-      <div class="main2">
-        <a class="headline">What we have</a>
-        <div class="main2_features_div">
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 1</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 2</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 3</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 4</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 5</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-        </div>
-      </div>
-      <div id="discord"></div>
-      <div class="main4">
-        <a class="headline">Join the Discord</a>
-        <div class="main4_dc_div">
-          <iframe class="main4_dc_widget" src="https://imgur.com/78RPeUY.png" width="350" height="500" title="discord" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-          <div class="main4_dc_description_div">
-            <a class="main4_dc_description_title">Let's talk!</a>
-            <a class="main4_dc_description"> ・Meet other players <br> ・Ask questions <br> ・Get notified about updates <br> ・Give feedback  <br><br> &amp; more </a>
-            <a href="https://discord.gg/b3TpFr7FtF" class="main4_dc_button_a">
-              <div class="main4_dc_button">Join</div>
+        <!-- Contenido Principal -->
+        <h1 class="text-4xl font-bold italic text-highlight mb-6 uppercase">
+            <strong><em>System Maintenance in Progress ....</em></strong>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-8">
+            Our website is currently under maintenance. Please check back soon!
+        </p>
+
+        <!-- Informaci�n de Contacto -->
+        <div class="text-gray-400">
+            <p class="mb-4">
+                For urgent inquiries, please join our Discord server:
+            </p>
+            <a href="https://discord.gg/d4QDyUgP" target="_blank" class="text-highlight hover:text-blue-400 transition-colors">
+                Join Sky Blue Node on Discord
             </a>
-          </div>
         </div>
-      </div>
-      <div id="about"></div>
-      <div class="main5">
-        <a class="headline">Who we are</a>
-        <div class="main5_admin_div">
-          <div class="main5_admins_div main5_admins_dev_type2">
-            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[FOUNDER]</a>
-              <a class="main5_admins_description_title" href="https://example.com">FOUNDER Name</a>
-              <a class="main5_admins_description">FOUNDER<br>description</a>
-            </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type1">
-            <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[FOUNDER]</a>
-              <a class="main5_admins_description_title" href="https://example.com">FOUNDER Name</a>
-              <a class="main5_admins_description">FOUNDER<br>description</a>
-            </div>
-          </div>
-        </div>
-		<div class="main5_admin_div">
-			<div class="main5_admins_div main5_admins_dev_type2">
-			  <img class="main5_admins_img" alt="admin member img" src="media/member_placeholder.webp">
-			  <div class="main5_admins_description_div">
-				<a class="main5_admins_description_rank main5_admins_description_rank_owner">[FOUNDER]</a>
-				<a class="main5_admins_description_title" href="https://example.com">FOUNDER Name</a>
-				<a class="main5_admins_description">FOUNDER<br>description</a>
-			  </div>
-			</div>
-        <div class="main5_supporter_div">
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 1</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 2</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 3</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 4</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="join"></div>
-      <div class="main3">
-        <a class="headline">How to join</a>
-        <div class="main3_join_div_div">
-          <div class="main3_join_div">
-            <a class="main3_join_title">Java</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-				
-                <a>IP:</a>
-                <a>Version:</a>
-              </div>
-              <div class="main3_join_values">
-                <a>play.skullmc.us.kg</a>
-                <a>1.20.1</a>
-              </div>
-            </div>
-          </div>
-          <div class="main3_join_div">
-            <a class="main3_join_title">Bedrock</a>
-            <div class="main3_join_content_div">
-              <div class="main3_join_categories">
-                <a>IP:</a>
-                <a>Port:</a>
-              </div>
-              <div class="main3_join_values">
-                <a>join.skullmc.us.kg</a>
-                <a>69420</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="copyright_div">
-      <a href="https://antofactzone.carrd.co/" class="copyright">Made by AFZ</a>
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="js/firefly.js" type="text/javascript"></script>
-	<script src="js/main.js" type="text/javascript"></script>
+    </main>
 
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-gray-500">
+        <p> 2024 Sky Blue Node. All rights reserved.</p>
     </footer>
-  </body>
+</body>
 </html>
