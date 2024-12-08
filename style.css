@@ -1,0 +1,2139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --body: #0e1015;
+  --secondBG: #18191f;
+  --thirdBG: #1b1c22;
+  --fourthBG: #21232a;
+  --accent: #0f275a;
+  --accentHover: #1c3e88;
+  --text: #fff;
+  --grey: #a3a5ae;
+  --greyish: #a8a8a8;
+  --buttonText: #fff;
+  --border: #323339;
+  --borderAccent: #3e5ea3;
+  --borderAccentHover: #5173bd;
+  --btnShadow: 3px 3px 20px var(--accent);
+  --boxShadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.1);
+  --boxShadow2: 0px 10px 50px hsla(0,0%,93%,.2);
+
+  --frame01: url(/assets/images/frame-24.svg);
+  --frame02: url(/assets/images/frame-body.svg);
+  --frame03: url(/assets/images/header-frame.svg);
+}
+
+
+html[data-theme='light'] {
+  --body: #e0e9ee;
+  --secondBG: #fafcfd;
+  --thirdBG: #fff;
+  --fourthBG: #f1f1f1;
+  --text: #0f275a;
+
+  --grey: #505158;
+  --greyish: #2b2c30;
+
+  --buttonText: #fff;
+  --border: #b4b6b9;
+
+  --frame01: url(/assets/images/dark-frame-01.svg);
+  --frame02: url(/assets/images/dark-frame-02.svg);
+  --frame03: url(/assets/images/dark-frame-03.svg);
+}
+
+body {
+  color: var(--text);
+  background: var(--body);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+:focus-visible {
+  outline: inherit;
+}
+
+a {
+  text-decoration: inherit;
+  color: var(--text);
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a:hover {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:focus {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+}
+
+button {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+input {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.JC-ToggleBtn {
+  background: inherit;
+  border: inherit;
+  font-size: 28px;
+  color: var(--grey);
+  transition: 0.3s ease;
+}
+
+.JC-ToggleBtn:hover {
+  color: var(--borderAccent);
+  transition: 0.3s ease;
+}
+
+/* MAIN DESIGN */
+
+.JC-navBar-width {
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100px;
+}
+
+.JC-navBar-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+}
+
+.JC-navBar-center {
+  position: relative;
+  z-index: 2;
+}
+
+.JC-Logo {
+  width: 150px;
+}
+
+.JCHeader {
+  background: var(--frame03);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 800px;
+}
+
+.JC-navBar-center-links {
+  height: 60px;
+  background: var(--thirdBG);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80px;
+  gap: 25px;
+  padding: 0px 30px;
+  border: 1px solid var(--border);
+  min-width: 360px;
+}
+
+.nav {
+  position: relative;
+  gap: 25px;
+}
+
+.nav li a {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 15px;
+  text-align: center;
+  color: var(--greyish);
+  transition: 0.3s ease;
+  gap: 5px;
+}
+
+.nav li a span {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.JC-navBar-center .nav li a:hover, .nav li a.dropdown-toggle.active {
+  color: var(--text);
+  transition: 0.3s ease;
+  background: transparent !important;
+}
+
+.nav li .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+
+  z-index: 1;
+  background-color: var(--thirdBG);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: var(--boxShadow);
+  margin-top: 10px;
+  transition: 0.3s ease;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.nav li .dropdown-menu.active {
+  display: flex;
+  transition: 0.3s ease;
+}
+
+.nav li .dropdown-menu a {
+  width: 100%;
+  color: var(--grey);
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 400;
+  text-align: left !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  transition: 0.3s ease;
+  border-radius: 0px;
+  font-size: 15px;
+  padding: 18px;
+}
+
+.nav .dropdown-menu li:first-child a {
+  border-radius: 0px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.nav .dropdown-menu li:last-child a {
+  border-radius: 0px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.nav li .dropdown-menu li {
+  width: 100%;
+}
+
+.nav li .dropdown-menu a:hover {
+  transition: 0.3s ease;
+  color: var(--text);
+  background: var(--secondBG) !important;
+}
+
+.JC-ActiveDrop {
+  background: var(--secondBG);
+  color: var(--text);
+  transition: 0.3s ease;
+}
+
+.JC-navBar-left .JC-ToggleBtn {
+  display: none;
+}
+
+.JC-navLink {
+  font-size: 15px;
+  color: var(--grey);
+  transition: 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.JC-navLink:hover {
+  transition: 0.3s ease;
+  color: var(--text);
+}
+
+.JC-Active {
+  color: var(--text) !important;
+  transition: 0.3s ease;
+}
+
+.JC-navBar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.JC-navBar-btn {
+  color: var(--grey);
+  transition: 0.3s ease;
+}
+
+.JC-navBar-btn:hover {
+  transition: 0.3s ease;
+  color: var(--text);
+}
+
+.JC-Active::before {
+  content: "";
+  background: #4d86fd;
+  width: 10px;
+  height: 5px;
+  position: absolute;
+  bottom: -6px;
+  border-radius: 100%;
+}
+
+.JC-navBar-btn-filled {
+  background: var(--thirdBG);
+  border-radius: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  color: var(--grey);
+  text-align: center;
+  min-width: 140px;
+  font-size: 16px;
+  padding: 0px 30px;
+  transition: 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.JC-navBar-btn-filled:hover {
+  transition: 0.3s ease;
+  background: var(--accent);
+  color: var(--buttonText);
+  border: 1px solid var(--borderAccent);
+}
+
+.JCHeader-content {
+  width: 1500px;
+  margin: 0 auto;
+  padding: 150px 0px 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.JCHeader-contentLeft {
+  width: 700px;
+}
+
+.JCHeader-title {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 80px;
+}
+
+.JCHeader-slogan {
+  font-size: 16px;
+  color: var(--grey);
+  width: 430px;
+  margin-top: 25px;
+  line-height: 25px;
+}
+
+.JCHeader-image {
+  width: 650px;
+}
+
+.JCHeader-SearchBox {
+  height: 70px;
+  display: flex;
+  padding: 0px 0px 0px 30px;
+  background: var(--thirdBG);
+  border: 1px solid var(--border);
+  border-right: inherit;
+  width: 500px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100px;
+  margin-top: 50px;
+}
+
+.JCHeader-SearchBox-left {
+  display: flex;
+  align-items: center;
+}
+
+.JCHeader-SearchBox-text {
+  font-size: 15px;
+  color: var(--grey);
+}
+
+.JCHeader-SearchBox-left .uil {
+  font-size: 26px;
+  margin-right: 10px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewrite {
+  margin-left: 5px;
+  font-size: 15px;
+  color: var(--grey);
+}
+
+.JCHeader-SearchBtn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--buttonText);
+  background: var(--accent);
+  border-radius: 80px;
+  width: 160px;
+  transition: 0.3s ease;
+}
+
+.JCHeader-SearchBtn:hover {
+  transition: 0.3s ease;
+  color: var(--buttonText);
+  background: var(--accentHover);
+}
+
+/* MOBILE MENU CSS */
+
+.JC-mobileBtn {
+  border: inherit;
+  font-size: 24px;
+  background: transparent;
+  padding: 12px 13px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+  color: var(--text);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.JC-mobileBtn:hover {
+  transition: 0.3s ease;
+  color: var(--accent);
+}
+
+.JC-mobile-overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background: rgba(27,28,34,50%);
+  border-right: 1px solid var(--border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.JC-mobileMenu-overlay {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.JC-MobileMenu-content-head {
+  padding: 20px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.JC-mobile-overlay .JC-closeBtn {
+  font-size: 35px;
+  color: #e14b4b;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.JC-mobile-overlay .JC-closeBtn:hover {
+  color: #ab2727;
+  transition: 0.3s ease;
+}
+
+.mobileLink {
+  font-size: 16px;
+  padding: 20px 30px;
+  color: var(--grey);
+  background: var(--thirdBG);
+  border-top: 1px solid var(--border);
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.mobileLink:hover {
+  transition: 0.3s ease;
+  color: #fff;
+  background: var(--accent);
+}
+
+.mobileLink-btn {
+  color: #fff;;
+  border: 2px solid var(--accent);
+  padding: 20px 30px;
+  font-weight: 500;
+  background: var(--accent);
+  font-size: 16px;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.JC-MobileMenu-content .nav {
+  flex-direction: column;
+  gap: 0px;
+}
+
+.JC-MobileMenu-content .nav li a {
+  font-size: 16px;
+  padding: 20px 30px;
+  color: var(--grey);
+  background: var(--thirdBG);
+  border-top: 1px solid var(--border);
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.JC-MobileMenu-content .nav li a span {
+  filter: inherit !important;
+}
+
+.JC-MobileMenu-content .nav li .dropdown-menu {
+  margin-top: 0px;
+  position: relative;
+  width: 100%;
+  border-radius: 0px;
+  border-top: inherit;
+  border-bottom: inherit;
+  background: var(--secondBG);
+}
+
+.JC-MobileMenu-content .nav .dropdown-menu li:first-child a {
+  border-radius: 0px;
+}
+
+.JC-MobileMenu-content .nav .dropdown-menu li:last-child a {
+  border-radius: 0px;
+}
+
+/* MOBILE MENU CSS */
+
+.JCHeader-serviceContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.JCHeader-serviceBox-width {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 50px;
+  min-height: 350px;
+  border-radius: 30px;
+  box-shadow: var(--boxShadow2);
+  margin-top: -30px;
+}
+
+.JCHeader-serviceBox-left {
+  width: 450px;
+}
+
+.JCHeader-serviceBox-right {
+  display: grid;
+  margin: 0 auto;
+  gap: 30px;
+  grid-template-columns: repeat(2,1fr);
+  width: 750px;
+  margin-right: 0;
+}
+
+.JCHeader-serviceBox-wrap {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.JCHeader-serviceBox-tag {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.JCHeader-serviceBox-tag .uil {
+  font-size: 40px;
+  color: var(--borderAccentHover);
+}
+
+.JCHeader-serviceBox-title {
+  font-size: 46px;
+  line-height: 50px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.JCHeader-serviceBox-slogan {
+  width: 300px;
+  color: var(--grey);
+  font-weight: 300;
+  margin-top: 15px;
+}
+
+.JCHeader-serviceBox-btn {
+  height: 60px;
+  width: 200px;
+  background: var(--accent);
+  box-shadow: var(--boxShadow);
+  color: var(--buttonText);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 17px;
+  text-transform: capitalize;
+  transition: 0.3s ease;
+}
+
+.JCHeader-serviceBox-btn:hover {
+  transition: 0.3s ease;
+  background: var(--accentHover);
+  color: var(--buttonText);
+}
+
+.JCHeader-serviceBox-btn .uil {
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+.JCHeader-serviceBox-btn:hover .uil {
+  transition: 0.3s ease;
+  transform: rotate(45deg);
+}
+
+.JCHeader-serviceBox-heading {
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+.JCHeader-serviceBox-wrap-slogan {
+  font-size: 16px;
+  color: var(--grey);
+  font-weight: 400;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.JC-FeaturesContainer {
+  padding: 100px 0px;
+  margin-top: 100px;
+  background: var(--secondBG);
+}
+
+.JC-FeaturesContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.JC-FeaturesContainer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.JC-FeaturesContainer-title {
+  width: 700px;
+  font-size: 74px;
+  font-weight: 800;
+  line-height: 90px;
+}
+
+.JC-FeaturesContainer-slogan {
+  width: 650px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  color: var(--grey);
+}
+
+.JC-FeaturesContainer-grid {
+  display: grid;
+  margin: 0 auto;
+  margin-top: 80px;
+  gap: 80px 30px;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.JC-FeaturesBox {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: var(--boxShadow);
+  background: var(--thirdBG);
+  padding: 30px;
+}
+
+.JC-FeaturesBox-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--accent);
+  color: var(--buttonText);
+  border-radius: 20px;
+  margin-top: -65px;
+  margin-bottom: 30px;
+}
+
+.JC-FeaturesBox-title {
+  font-size: 28px;
+  width: 280px;
+  font-weight: 600;
+}
+
+.JC-FeaturesBox-icon .uil {
+  font-size: 38px;
+}
+
+.JC-FeaturesBox-desc {
+  margin-top: 15px;
+  line-height: 28px;
+  font-weight: 300;
+  color: var(--grey);
+}
+
+.highlight {
+  color: var(--borderAccentHover);
+}
+
+.JC-PlansContainer {
+  padding: 100px 0px;
+
+  background-image: var(--frame01);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+.JC-PlansContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.JC-PlansContainer-title {
+  font-size: 74px;
+  font-weight: 800;
+  line-height: 75px;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.JC-PlansContainer-slogan {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  color: var(--grey);
+  margin-top: 10px;
+}
+
+.JC-PlansContainer-grid {
+  display: grid;
+  margin: 0 auto;
+  margin-top: 60px;
+  gap: 30px;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.JC-HomePlan-box {
+  height: 300px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: var(--thirdBG);
+  padding: 40px 30px;
+  box-shadow: var(--boxShadow);
+  border-radius: 30px;
+}
+
+.JC-HomePlan-tag {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.JC-HomePlan-title {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--grey);
+  line-height: 35px;
+}
+
+.JC-HomePlan-btn {
+  height: 60px;
+  width: 200px;
+  background: var(--accent);
+  box-shadow: var(--boxShadow);
+  color: var(--buttonText);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 17px;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+}
+
+.JC-HomePlan-btn:hover {
+  transition: 0.3s ease;
+  background: var(--accentHover);
+  color: var(--buttonText);
+}
+
+.JC-BottomContainer {
+  background: var(--fourthBG);
+  padding: 100px 0px;
+}
+
+.JC-ContactContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.JC-ContactTitle {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.JC-ContactSlogan {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  color: var(--grey);
+  width: 500px;
+}
+
+.JC-ContactContainer-grid {
+  display: grid;
+  margin: 0 auto;
+  margin-top: 60px;
+  gap: 30px;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.JC-ContactGrid-box {
+  background: var(--secondBG);
+  box-shadow: var(--boxShadow);
+  border-radius: 30px;
+  min-height: 300px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.JC-ContactGrid-icon {
+  font-size: 40px;
+}
+
+.JC-ContactGrid-title {
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.JC-ContactGrid-slogan {
+  margin-top: 8px;
+  font-weight: 300;
+  color: var(--grey);
+}
+
+.JC-ContactGrid-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease;
+}
+
+.JC-ContactGrid-link .uil {
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+.JC-ContactGrid-link:hover .uil {
+  transform: rotate(45deg);
+  transition: 0.3s ease;
+}
+
+.JC-ContactGrid-link:hover {
+  transition: 0.3s ease;
+}
+
+.JC-FooterContainer {
+  background: var(--fourthBG);
+  padding: 100px 0px;
+  border-top: 1px solid var(--border);
+}
+
+.JC-FooterContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.JC-FooterLeft {
+  width: 450px;
+}
+
+.JC-FooterLeft-title {
+  font-size: 28px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.JC-FooterLeft-title span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.JC-FooterLeft-slogan {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  color: var(--grey);
+}
+
+.JC-FooterRight {
+  display: grid;
+  margin: 0 auto;
+  gap: 30px;
+  grid-template-columns: repeat(3,1fr);
+  margin-right: 0;
+}
+
+.JC-FooterBox {
+  width: 180px;
+}
+
+.JC-FooterBox-head {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.JC-FooterBox-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.JC-FooterLink {
+  color: var(--grey);
+  font-weight: 300;
+  transition: 0.3s ease;
+}
+
+.JC-FooterLink:hover {
+  transition: 0.3s ease;
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.JC-FooterBottom-width {
+  width: 1500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--greyish);
+  text-transform: capitalize;
+}
+
+.wrapper {
+  position: fixed;
+  bottom: 50px;
+  right: -370px;
+  z-index: 2;
+  max-width: 345px;
+  width: 100%;
+  background: var(--body);
+  border-radius: 8px;
+  padding: 15px 25px 22px;
+  transition: right 0.3s ease;
+  border: 2px solid var(--borderAccent);
+  box-shadow: var(--boxShadow2);
+}
+
+.wrapper.show {
+  right: 20px;
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+header i {
+  color: var(--accent);
+  font-size: 32px;
+}
+
+header h2 {
+  color: var(--borderAccent);
+  font-weight: 800;
+}
+
+.wrapper .data {
+  margin-top: 16px;
+}
+
+.wrapper .data p {
+  color: var(--grey);
+  font-size: 16px;
+}
+
+.data p a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.data p a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .buttons {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons .button {
+  border: none;
+  color: var(--buttonText);
+  padding: 8px 0;
+  border-radius: 4px;
+  background: var(--accent);
+  cursor: pointer;
+  width: calc(100% / 2 - 10px);
+  transition: all 0.2s ease;
+}
+
+.buttons #acceptBtn:hover {
+  background-color: var(--accentHover);
+}
+
+#declineBtn {
+  border: 2px solid var(--border);
+  background-color: var(--thirdBG);
+  color: var(--text);
+}
+
+#declineBtn:hover {
+  border: 2px solid var(--borderAccent);
+  background-color: var(--accentHover);
+  color: var(--buttonText);
+}
+
+.JCPage-wrapper {
+  background: var(--frame01);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 100px;
+}
+
+.JCPage-content {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 650px;
+  margin: 0 auto;
+}
+
+.JCPage-title {
+  font-size: 74px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 75px;
+}
+
+.JCPage-slogan {
+  margin-top: 30px;
+  color: var(--grey);
+  font-weight: 300;
+  font-size: 18px;
+  text-align: center;
+}
+
+.JC-PlanContainer-wrapper {
+  padding: 0px 0px 150px;
+  background: var(--secondBG);
+}
+
+.JC-PlanContainer-wrapper-width {
+  display: grid;
+  gap: 30px 20px;
+  grid-template-columns: repeat(3,1fr);
+  width: 1500px;
+  margin: 0 auto;
+
+  position: relative;
+  top: -100px;
+}
+
+.JC-PlanWrapper-box {
+  width: 100%;
+  background: var(--thirdBG);
+  box-shadow: var(--boxShadow);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 35px;
+}
+
+.JC-PlanWrap-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.JC-PlanWrap-desc {
+  font-size: 16px;
+  color: var(--grey);
+  font-weight: 300;
+}
+
+.JC-PlanWrap-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--borderAccent);
+}
+
+.JC-PlanWrap-time {
+  font-size: 15px;
+  color: var(--grey);
+}
+
+.JC-PlanWrapper-content {
+  border-top: 1px solid var(--border);
+  padding: 15px 0px 0px;
+  margin-top: 15px;
+}
+
+.JC-PlanWrapper-info .uil {
+  font-size: 24px;
+}
+
+.JC-PlanWrap-heading {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.JC-PlanWrapper-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--grey);
+}
+
+.JC-PlanBuy-btn {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 25px;
+  background: var(--accent);
+  border-radius: 30px;
+  font-size: 16px;
+  color: var(--buttonText);
+  transition: 0.3s ease;
+}
+
+.JC-PlanBuy-btn:hover {
+  transition: 0.3s ease;
+  background: var(--accentHover);
+  color: var(--buttonText);
+}
+
+.JC-PlanFeatures-container {
+  padding: 100px 0px;
+  background: var(--frame02);
+}
+
+.JC-PlanFeatures-width {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.JC-SectionTitle {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.JC-PlanFeatures-grid {
+  display: grid;
+  margin: 0 auto;
+  margin-top: 60px;
+  gap: 30px;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.JC-PlanFeature-box {
+  background: var(--secondBG);
+  box-shadow: var(--boxShadow);
+  border-radius: 30px;
+  min-height: 300px;
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.JC-PlanFeature-boxTitle {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.JC-PlanFeature-boxTitle p {
+  width: 200px;
+}
+
+.JC-PlanFeature-boxTitle .uil {
+  font-size: 48px;
+}
+
+.JC-PlanFeature-boxInfo {
+  color: var(--grey);
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.JC-AboutContainer {
+  padding: 100px 0px;
+  background: var(--body);
+}
+
+.JC-AboutContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.JC-AboutLeft {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.JC-AboutTitle {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.JC-AboutSlogan {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 35px;
+  color: var(--grey);
+}
+
+.JC-AboutRight {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 500px;
+  margin-right: 0;
+}
+
+.JC-StatBox-title {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.JC-StatBox-small {
+  margin-top: -10px;
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--grey);
+  text-transform: capitalize;
+}
+
+.JC-LessHeight {
+  padding-bottom: 0px;
+}
+
+.JCPage-buttonRows {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.JCPage-button:first-child {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.JCPage-button:last-child {
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-left: 1px solid var(--border);
+}
+
+.JCPage-button {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  background: var(--thirdBG);
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--grey);
+  transition: 0.3s ease;
+}
+
+.JCPage-button:first-child {
+  border-left: 1px solid var(--border);
+}
+
+.JCPage-button:last-child {
+  border-right: 1px solid var(--border);
+}
+
+.JCPage-buttonActive:first-child {
+  border-left: 1px solid var(--borderAccent);
+}
+
+.JCPage-buttonActive:last-child {
+  border-right: 1px solid var(--borderAccent);
+}
+
+.JCPage-buttonActive {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  background: var(--accent);
+  border-left: 1px solid var(--borderAccent);
+  border-top: 1px solid var(--borderAccent);
+  border-bottom: 1px solid var(--borderAccent);
+  color: var(--buttonText);
+  transition: 0.3s ease;
+}
+
+.JCPage-buttonActive:hover {
+  transition: 0.3s ease;
+  color: var(--buttonText);
+  background: var(--accentHover);
+}
+
+.JCPage-button:hover {
+  background: var(--accent);
+  color: var(--buttonText);
+  border: 1px solid var(--borderAccent);
+  transition: 0.3s ease;
+}
+
+.JC-LegalContainer-right p {
+  color: var(--grey);
+}
+
+.JC-LegalContainer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.JC-PageSubTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--text) !important;
+  padding-bottom: 5px;
+}
+
+.JC-PageInfo-desc {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--grey);
+}
+
+.JC-PageInfo {
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--grey);
+}
+
+.JC-OrderedList {
+  margin-top: 25px;
+}
+
+.JC-LegalContainer {
+  padding: 100px 0px;
+}
+
+.JC-LegalContainer-width {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.JC-LegalContainer-left {
+  width: 300px;
+}
+
+.JC-LegalContainer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 800px;
+}
+
+.JC-LegalLeft-heading {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.JC-legalLeft-col {
+  margin-top: 10px;
+  padding: 0px 15px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.JC-LegalLink {
+  color: var(--grey);
+  transition: 0.3s ease;
+}
+
+.JC-LegalLink:hover {
+  transition: 0.3s ease;
+  color: var(--text);
+}
+
+/* RESPONSIVE DESIGN */
+
+@media only screen and (max-width: 1550px) {
+  .JC-navBar-width {
+      width: 90%;
+  }
+
+  .JCHeader-content {
+      width: 90%;
+  }
+
+  .JCHeader-title {
+      font-size: 60px;
+  }
+
+  .JCHeader-serviceBox-width {
+      width: 90%;
+  }
+
+  .JC-FeaturesContainer-width {
+      width: 90%;
+  }
+
+  .JC-PlansContainer-width {
+      width: 90%;
+  }
+
+  .JC-ContactContainer-width {
+      width: 90%;
+  }
+
+  .JC-FooterContainer-width {
+      width: 90%;
+  }
+
+  .JC-FooterBottom-width {
+      width: 90%;
+  }
+
+  .JC-PlanContainer-wrapper-width {
+      width: 90%;
+  }
+
+  .JC-PlanFeatures-width {
+      width: 90%;
+  }
+
+  .JC-AboutContainer-width {
+      width: 90%;
+      gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .JCHeader-image {
+      width: 600px;
+  }
+
+  .JCHeader-title {
+      font-size: 50px;
+      line-height: 60px;
+  }
+
+  .JCHeader-serviceBox-right {
+      width: 500px;
+  }
+
+  .JC-FeaturesContainer-title {
+      line-height: 70px;
+      font-size: 58px;
+  }
+
+  .JC-FooterRight {
+      gap: 0px;
+  }
+
+  .JC-LegalContainer-width {
+      width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .JCHeader-contentLeft {
+      width: 550px;
+  }
+
+  .JCHeader-contentRight {
+      position: relative;
+  }
+
+  .JCHeader-image {
+      position: absolute;
+      left: -450px;
+  }
+
+  .JC-FeaturesBox-title {
+      width: 100%;
+      line-height: 35px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .JC-FeaturesContainer-slogan {
+      font-size: 17px;
+      line-height: 28px;
+  }
+
+  .JC-FeaturesContainer-slogan {
+      text-align: right;
+      width: 500px;
+  }
+
+  .JC-FeaturesContainer-head {
+      align-items: flex-start;
+  }
+
+  .JC-FeaturesContainer-title {
+      width: 550px;
+      font-size: 46px;
+      line-height: 58px;
+  }
+
+  .JC-FooterLeft {
+      width: 360px;
+  }
+
+  .JC-FooterLeft-title span {
+      font-size: 15px;
+  }
+
+  .JC-FooterLeft-slogan {
+      font-size: 16px;
+      line-height: 25px;
+  }
+
+  .JC-FooterContainer {
+      padding: 100px 0px 50px;
+  }
+
+  .JC-PlanContainer-wrapper-width {
+      grid-template-columns: repeat(2,1fr);
+  }
+
+  .JC-PlanFeatures-grid {
+      gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .JCHeader-image {
+      position: absolute;
+      left: -300px;
+  }
+
+  .JCHeader-serviceBox-width {
+      align-items: center;
+  }
+
+  .JCHeader-serviceBox-title {
+      font-size: 40px;
+      line-height: 45px;
+  }
+
+  .JCHeader-serviceBox-left {
+      width: 375px;
+  }
+
+  .JCHeader-serviceBox-right {
+      width: 420px;
+  }
+
+  .JC-FeaturesContainer-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .JC-ContactContainer-grid {
+      grid-template-columns: repeat(2,1fr);
+  }
+
+  .JC-FooterRight {
+      gap: 30px;
+      grid-template-columns: repeat(2,1fr);
+  }
+
+  .JC-PlanFeatures-grid {
+      grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .JCHeader-contentRight {
+      display: none;
+  }
+
+  .JC-navBar-center {
+      display: none;
+  }
+
+  .JC-navBar-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+  }
+
+  .JC-mobileBtn {
+      display: flex;
+  }
+
+  .JC-navBar-btn-filled {
+      display: none;
+  }
+
+  .JC-MobileMenu-content > .nav li a:hover, .nav li a.dropdown-toggle.active {
+      background: var(--body) !important;
+  }
+
+  .JCHeader-serviceBox-width {
+      flex-direction: column;
+  }
+
+  .JCHeader-serviceBox-left {
+      width: 100%;
+  }
+
+  .JCHeader-serviceBox-title {
+      font-size: 46px;
+  }
+
+  .JCHeader-serviceBox-right {
+      margin-top: 50px;
+      width: 100%;
+  }
+
+  .JC-FeaturesContainer-head {
+      flex-direction: column;
+  }
+
+  .JC-FeaturesContainer-slogan {
+      text-align: left;
+      margin-top: 25px;
+  }
+
+  .JC-FeaturesContainer-title {
+      line-height: 60px;
+      font-size: 50px;
+  }
+
+  .JC-PlansContainer-grid {
+      grid-template-columns: repeat(1,1fr);
+      width: 100%;
+  }
+
+  .JC-HomePlan-box {
+      width: 100%;
+  }
+
+  .JC-PlansContainer-title {
+      width: 500px;
+      font-size: 50px;
+      line-height: 50px;
+  }
+
+  .JC-PlansContainer-slogan {
+      margin-top: 20px;
+  }
+
+  .JC-AboutContainer-width {
+      flex-direction: column;
+  }
+
+  .JC-LegalContainer-width {
+      flex-direction: column;
+  }
+
+  .JC-LegalContainer-left {
+      width: 100%;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 35px;
+  }
+
+  .JC-LegalContainer-right {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .JC-FooterContainer-width {
+      flex-direction: column;
+  }
+
+  .JC-FooterRight {
+      margin-left: 0;
+      margin-top: 35px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .JC-PlanFeatures-grid {
+      grid-template-columns: repeat(1,1fr);
+  }
+
+  .JCPage-content {
+      width: 90%;
+  }
+
+  .JCPage-title {
+      text-align: center;
+      font-size: 50px;
+      line-height: 50px;
+      width: 500px;
+  }
+
+  .JC-AboutLeft {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .JC-FeaturesContainer-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .JC-ContactContainer-grid {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
+  .JC-PlanContainer-wrapper-width {
+      grid-template-columns: repeat(1,1fr);
+  }
+
+  .JC-PlanFeatures-grid {
+      gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .JCHeader-contentLeft {
+      width: 100%;
+  }
+
+  .JCHeader-SearchBox {
+      width: 100%;
+  }
+
+  .JCHeader-content {
+      padding: 80px 0px;
+  }
+
+  .JCHeader-serviceBox-right {
+      grid-template-columns: repeat(1,1fr);
+  }
+
+  .JCHeader-serviceBox-title {
+      line-height: 48px;
+  }
+
+  .JC-FeaturesContainer-title {
+      width: 100%;
+  }
+
+  .JC-FeaturesContainer-slogan {
+      width: 100%;
+  }
+
+  .JCHeader-serviceBox-slogan {
+      width: 100%;
+  }
+
+  .JCHeader-serviceBox-width {
+      padding: 40px 30px;
+  }
+
+  .JCHeader-serviceBox-title {
+      line-height: 38px;
+      font-size: 30px;
+  }
+
+  .JC-ContactSlogan {
+      width: 100%;
+  }
+
+  .JC-PlansContainer-title {
+      width: 100%;
+  }
+
+  .JC-PlansContainer-slogan {
+      text-align: center;
+      width: 100%;
+  }
+
+  .JCPage-title {
+      font-size: 44px;
+      width: 100%;
+  }
+
+  .JC-AboutRight {
+      width: 100%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .JCHeader-slogan {
+      width: 100%;
+  }
+
+  .JCHeader-SearchBox {
+      flex-direction: column;
+      height: auto;
+      min-height: 80px;
+      padding: 15px;
+      gap: 10px;
+
+      border: 1px solid var(--border);
+      border-radius: 16px;;
+  }
+
+  .JCHeader-SearchBtn {
+      height: 50px;
+  }
+
+  .JC-FeaturesContainer-title {
+      line-height: 46px;
+      font-size: 35px;
+  }
+
+  .JC-FeaturesContainer-slogan {
+      font-size: 16px;
+      line-height: 25px;
+  }
+
+  .JCHeader-title {
+      font-size: 42px;
+      line-height: 50px;
+  }
+
+  .JCHeader {
+      min-height: 750px;
+  }
+
+  .JCHeader-serviceBox-btn {
+      width: 100%;
+  }
+
+  .JC-FeaturesBox-title {
+      line-height: 35px;
+  }
+
+  .JC-FeaturesBox-desc {
+      line-height: 25px;
+  }
+
+  .JC-PlansContainer-title {
+      line-height: 35px;
+      font-size: 35px;
+  }
+
+  .JC-ContactTitle {
+      font-size: 35px;
+  }
+
+  .JC-ContactGrid-box {
+      min-height: 260px;
+  }
+
+  .JC-FooterLeft {
+      width: 100%;
+  }
+
+  .JC-FooterBox {
+      width: 100%;
+  }
+
+  .JC-FooterRight {
+      width: 100%;
+  }
+
+  .JCPage-buttonActive {
+      width: 160px;
+      font-size: 15px;
+  }
+
+  .JCPage-buttonNotActive {
+      width: 156px;
+      font-size: 15px;
+  }
+}
+
+.JC-BlogContainer {
+  padding: 100px 0;
+  background: var(--secondBG);
+}
+
+.JC-BlogContainer-width {
+  width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.JC-BlogCard {
+  background: var(--thirdBG);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--boxShadow);
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Add this to ensure proper stacking inside the card */
+}
+
+.JC-BlogCard:hover {
+  box-shadow: var(--boxShadow2);
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+.JC-BlogCard-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.JC-BlogCard-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to grow and take available space */
+}
+
+.JC-BlogCard-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.JC-BlogCard-desc {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--grey);
+  line-height: 24px;
+  flex-grow: 1; /* Push the button to the bottom */
+}
+
+.JC-BlogCard-btn {
+  align-self: start;
+  background: var(--accent);
+  color: var(--buttonText);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 20px; /* Add some spacing above the button */
+}
+
+/* Individual Blog Post Styles */
+.JC-BlogPostContainer {
+  padding: 100px 0;
+  background: var(--secondBG);
+}
+
+.JC-BlogPostContainer-width {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.JC-BlogPostContent h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.JC-BlogPostMeta {
+  font-size: 14px;
+  color: var(--grey);
+  margin-bottom: 40px;
+}
+
+.JC-BlogPostContent h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.JC-BlogPostContent p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.JC-BlogPostBack {
+  margin-top: 50px;
+}
+
+.JC-BlogPostBackLink {
+  font-size: 16px;
+  color: var(--accent);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.JC-BlogPostBackLink:hover {
+  color: var(--accentHover);
+  text-decoration: underline;
+}
+
+
+.JC-BlogCard-btn:hover {
+  background: var(--accentHover);
+  transition: 0.3s ease;
+}
+
+@media only screen and (max-width: 1550px) {
+  .JC-BlogContainer-width {
+      width: 90%;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .JC-BlogContainer-width {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .JC-BlogContainer-width {
+      grid-template-columns: 1fr;
+  }
+}
