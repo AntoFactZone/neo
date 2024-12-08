@@ -1,0 +1,92 @@
+[data-user="true"] {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--navHeight);
+    margin-bottom: calc(var(--navHeight)*1.4);
+}
+
+#table_id_wrapper {
+    width: 100%;
+}
+
+
+table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:after{
+    opacity: 1 !important;
+    color: var(--blue);
+    filter: drop-shadow(0px 1px 1px #000);
+    transition: 300ms all cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > th.dt-ordering-desc span.dt-column-order:after, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-asc span.dt-column-order:after, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order:before, table.dataTable thead > tr > td.dt-orderable-desc span.dt-column-order:after, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-asc span.dt-column-order:after, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:before, table.dataTable thead > tr > td.dt-ordering-desc span.dt-column-order:after {
+    opacity: 0.2;
+    transition: 300ms all cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+table.dataTable > tbody > tr {
+    background-color: transparent;
+    border-radius: 30px;
+    transition: 300ms all cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+table.dataTable > tbody > tr:hover {
+    background-color: rgba(20, 183, 219,.2);
+    border-radius: 30px;
+    color: #fff !important;
+    transition: 300ms all cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.servers_list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+[data-select-sp="true"] {
+    width: 100%;
+    outline: 0;
+    border-radius: 10px;
+    padding: 0.35rem 0.5rem;
+    background: var(--background);
+    color: #fff;
+    border: 1px solid var(--blue);
+}
+
+[data-select-sp="true"] option {
+    background-color: var(--background);
+}
+
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+    background-color: var(--blue) !important;
+}
+
+.swal2-popup.swal2-modal.swal2-show {
+    background: var(--background) !important; 
+    color: #ffff;
+}
+
+optgroup option, optgroup, div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line],div:where(.swal2-icon).swal2-success .swal2-success-fix {
+    background: var(--background) !important;
+
+}
+
+
+
+
+.image_auth {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.auth_box {
+    width: fit-content;
+}
+
+@media screen and (max-width: 991px) {
+    .auth_box {
+        width: 100%;
+    }
+}
