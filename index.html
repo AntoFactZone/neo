@@ -4086,8 +4086,23 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 </script>
-</body>
-</html>
+
+
+<SCRIPT language=JavaScript>
+
+<!-- http://www.spacegun.co.uk -->
+
+var message = "function disabled";
+
+function rtclickcheck(keyp){ if (navigator.appName == "Netscape" && keyp.which == 3){ alert(message); return false; }
+
+if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) { alert(message); return false; } }
+
+document.onmousedown = rtclickcheck;
+
+</SCRIPT>
+
+
 <script type="text/javascript">
     window.$crisp=[];window.CRISP_WEBSITE_ID="4645d241-420b-43aa-bdc9-de0d14a192c9";
     (function(){
@@ -4095,4 +4110,8 @@ document.addEventListener('DOMContentLoaded', function () {
         s.src="https://client.crisp.chat/l.js";
         s.async=1;d.getElementsByTagName("head")[0].appendChild(s);
     })();
-    </script>
+    </script>	
+	
+</body>
+</html>
+
