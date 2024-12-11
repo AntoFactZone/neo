@@ -4037,55 +4037,6 @@
 		</div>	
 	</div>
 </footer>
-<!-- jQuery Lazy Load -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js" defer></script>
-
-<!-- Bootstrap v5.2.1 -->
-<script src="assets/js/popper.min.js" defer></script>
-<script src="assets/js/bootstrap.min.js" defer></script>
-
-
-<!-- Slide JS -->
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
-
-<!-- Custom JS (Include necessary code first) -->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-    });
-</script>
-
-<!-- Custom JS (Minified version if possible) -->
-<script src="assets/js/custom.min.js" defer></script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-	// Ensure the DOM is fully loaded before initializing
-	if ($('.splide_slider__reviews .splide__track').length) {
-		var splideReviews = new Splide('.splide_slider__reviews', {
-			type   : 'loop',
-			perPage: 3,
-			focus  : 'center',
-			gap    : "3rem",
-			perMove: 1,
-			breakpoints: {
-            991: {
-                focus: 'center',  
-                perPage: 1,
-                pagination: false
-            }
-			}
-		});
-	
-		splideReviews.mount();
-	} else {
-		console.error('Splide track or list element is missing.');
-	}
-})
-
-</script>
 
 
 <SCRIPT language=JavaScript>
